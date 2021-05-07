@@ -20,7 +20,7 @@ async def on_message(message):
         'Do you have to have an opinion on everything?' ,
         (
             'Stop boasting about your GPA, we know you are smart'
-            'You really need help'
+            '\nYou really need help'
         ),
     ]
 
