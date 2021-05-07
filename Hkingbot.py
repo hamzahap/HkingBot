@@ -16,7 +16,7 @@ async def on_message(message):
 
     Mudkiproasts = [
         'Mudkip is literally the worst Pokemon',
-        'Do you have to have an opinion on everything?' 
+        'Do you have to have an opinion on everything?' ,
         (
             'Stop boasting about your GPA, we know you are smart'
             'You really need help'
