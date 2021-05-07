@@ -10,17 +10,20 @@ GUILD = os.getenv('DISCORD_GUILD')
 client = discord.Client()
 
 @client.event
-async def on_ready():
-    for guild in client.guilds:
-        if guild.name == GUILD:
-            break
+async def on_message(message):
+    if message.author == client.user:
+        return
 
-    print(
-        f'{client.user} is connected to the following guild:\n'
-        f'{guild.name}(id: {guild.id})\n'
-    )
+    Mudkiproasts = [
+        'Mudkip is literally the worst Pokemon',
+        'Do you have to have an opinion on everything?' 
+        (
+            'Stop boasting about your GPA, we know you are smart'
+            'You really need help'
+        ),
+    ]
 
-    members = '\n - '.join([member.name for member in guild.members])
-    print(f'Guild Members:\n - {members}')
-
+    if message.content == 'Mudkip':
+        response = random.choice(Mudkiproasts)
+        await message.channel.send(response)
 client.run(TOKEN)
