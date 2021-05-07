@@ -23,8 +23,15 @@ async def on_message(message):
             '\nHe really needs help'
         ),
     ]
+    Zeshaanroasts = [
+        'Zeshaan is still shifting lol',
+        'What about Zeshaan? that man can\'t leave Mesaid. It\'s been like 3 months now lol'
+    ]
 
     if 'mudkip' in message.content.lower():
         response = random.choice(Mudkiproasts)
+        await message.channel.send(response)
+    if 'zeshaan' in message.content.lower() or 'biryani' in message.content.lower():
+        response = random.choice(Zeshaanroasts)
         await message.channel.send(response)
 client.run(TOKEN)
