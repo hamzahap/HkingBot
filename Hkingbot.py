@@ -1,4 +1,5 @@
 import os
+import random
 
 import discord
 from dotenv import load_dotenv
@@ -23,7 +24,7 @@ async def on_message(message):
         ),
     ]
 
-    if message.content == 'Mudkip':
+    if 'mudkip' in message.content.lower():
         response = random.choice(Mudkiproasts)
         await message.channel.send(response)
 client.run(TOKEN)
