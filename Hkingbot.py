@@ -42,5 +42,5 @@ async def on_message(message):
       #  await message.channel.send(response)
 
     if 'vibecat' in message.content.lower() or 'catvibe' in message.content.lower():
-        await channel.send(file=discord.File('catvibe.gif'))
+        await message.channel.send(file=discord.File('catvibe.gif'))
 client.run(TOKEN)
