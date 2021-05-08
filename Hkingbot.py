@@ -30,14 +30,17 @@ async def on_message(message):
     Melvicroasts = [
         'Ay esports trash, go play valorant. Diehard Riot fan'
     ]
-    if 'melvic' in message.content.lower():
-        response = random.choice(Melvicroasts)
-        await message.channel.send(response)
+    #if 'melvic' in message.content.lower():
+    #    response = random.choice(Melvicroasts)
+     #   await message.channel.send(response)
 
-    if 'mudkip' in message.content.lower():
-        response = random.choice(Mudkiproasts)
-        await message.channel.send(response)
-    if 'zeshaan' in message.content.lower() or 'biryani' in message.content.lower():
-        response = random.choice(Zeshaanroasts)
-        await message.channel.send(response)
+    #if 'mudkip' in message.content.lower():
+     #   response = random.choice(Mudkiproasts)
+    #    await message.channel.send(response)
+   # if 'zeshaan' in message.content.lower() or 'biryani' in message.content.lower():
+       # response = random.choice(Zeshaanroasts)
+      #  await message.channel.send(response)
+
+    if 'vibecat' in message.content.lower() or 'catvibe' in message.content.lower():
+        
 client.run(TOKEN)
