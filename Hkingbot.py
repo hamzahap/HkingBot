@@ -15,21 +15,21 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    Mudkiproasts = [
-        'Mudkip is literally the worst Pokemon',
-        'Mudkip needs to have an opinion on everything.' ,
-        (
-            'Mudkip should stop boasting about his GPA'
-            '\nHe really needs help'
-        ),
-    ]
-    Zeshaanroasts = [
-        'Zeshaan is still shifting lol',
-        'What about Zeshaan? that man can\'t leave Mesaid. It\'s been like 3 months now lol'
-    ]
-    Melvicroasts = [
-        'Ay esports trash, go play valorant. Diehard Riot fan'
-    ]
+    #Mudkiproasts = [
+     #   'Mudkip is literally the worst Pokemon',
+      #  'Mudkip needs to have an opinion on everything.' ,
+       # (
+       #     'Mudkip should stop boasting about his GPA'
+       #     '\nHe really needs help'
+       # ),
+    #]
+    #Zeshaanroasts = [
+    #    'Zeshaan is still shifting lol',
+    #    'What about Zeshaan? that man can\'t leave Mesaid. It\'s been like 3 months now lol'
+    #]
+    #Melvicroasts = [
+    #    'Ay esports trash, go play valorant. Diehard Riot fan'
+    #]
     #if 'melvic' in message.content.lower():
     #    response = random.choice(Melvicroasts)
      #   await message.channel.send(response)
