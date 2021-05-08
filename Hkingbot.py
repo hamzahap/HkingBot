@@ -27,6 +27,12 @@ async def on_message(message):
         'Zeshaan is still shifting lol',
         'What about Zeshaan? that man can\'t leave Mesaid. It\'s been like 3 months now lol'
     ]
+    Melvicroasts = [
+        'Ay esports trash, go play valorant. Diehard Riot fan'
+    ]
+    if 'melvic' in message.content.lower():
+        response = random.choice(Melvicroasts)
+        await message.channel.send(response)
 
     if 'mudkip' in message.content.lower():
         response = random.choice(Mudkiproasts)
