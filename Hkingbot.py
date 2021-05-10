@@ -5,7 +5,7 @@ import discord
 from giphy_client.rest import ApiException
 from discord.ext import commands
 
-client = commands.Bot(command_prefix="$")
+clients = commands.Bot(command_prefix="$")
 client = discord.Client()
 
 @client.event
@@ -20,7 +20,7 @@ async def on_message(message):
     if 'ettu' in message.content.lower():
         await message.channel.send(file=discord.File('ettu.gif'))
 
-@client.command()
+@clients.command()
 async def gif(ctx,*,q):
     giphykey = os.environ['GIPHY_KEY']
     api_instance = giphy_client.DefaultApi()
