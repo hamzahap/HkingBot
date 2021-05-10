@@ -21,7 +21,7 @@ async def on_message(message):
 
 @client.command()
 async def gif(ctx,*,q):
-    giphykey = os.environ['GIPHY_KEY']
+    giphykey = 'GIPHY_KEY'
     api_instance = giphy_client.DefaultApi()
 
     try:
