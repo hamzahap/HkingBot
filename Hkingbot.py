@@ -29,7 +29,7 @@ async def gif(ctx,*,q):
         lst = list(api_response.data)
         giff = random.choice(lst)
         emb = discord.Embed(title=q)
-        emb.set_image(url=f'api.giphy.com/v1/gifs/search')
+        emb.set_image(url=f'https://media.giphy.com/media/{giff.id}/giphy.gif')
 
         await ctx.channel.send(embed=emb)
 
