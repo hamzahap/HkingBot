@@ -19,7 +19,7 @@ async def on_message(message):
     if 'ettu' in message.content.lower():
         await message.channel.send(file=discord.File('ettu.gif'))
 
-@clients.command()
+@client.command()
 async def gif(ctx,*,q):
     giphykey = os.environ['GIPHY_KEY']
     api_instance = giphy_client.DefaultApi()
