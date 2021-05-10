@@ -21,7 +21,7 @@ async def on_message(message):
 
 @client.command()
 async def gif(ctx,*,q):
-    giphykey = os.getenv('GIPHY_KEY')
+    giphykey = os.getenv("GIPHY_KEY")
     api_instance = giphy_client.DefaultApi()
 
     try:
@@ -29,7 +29,7 @@ async def gif(ctx,*,q):
         lst = list(api_response.data)
         giff = random.choice(lst)
         emb = discord.Embed(title=q)
-        emb.set_image(url=f'https://media.giphy.com/media/{giff.id}/giphy.gif')
+        emb.set_image(url=f'api.giphy.com/v1/gifs/search')
 
         await ctx.channel.send(embed=emb)
 
