@@ -25,7 +25,7 @@ async def gif(ctx,*,q):
     api_instance = giphy_client.DefaultApi()
 
     try:
-        api_response = api_instance.gifs_search_get(giphykey, q, limit, rating='r')
+        api_response = api_instance.gifs_search_get(giphykey, q, limit=25, rating='r')
         lst = list(api_response.data)
         giff = random.choice(lst)
         emb = discord.Embed(title=q)
