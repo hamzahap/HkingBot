@@ -5,8 +5,7 @@ import discord
 from giphy_client.rest import ApiException
 from discord.ext import commands
 
-clients = commands.Bot(command_prefix="$")
-client = discord.Client()
+client = commands.Bot(command_prefix="$")
 
 @client.event
 async def on_message(message):
