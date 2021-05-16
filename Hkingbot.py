@@ -48,7 +48,7 @@ async def gif(ctx, *, q):
     api_response = api_instance.gifs_search_get(giphykey, q, limit=25, rating='r')
     list1 = list(api_response.data)
     giff = random.choice(list1)
-    
-    await ctx.channel.send(giff)
+
+    await ctx.channel.send(giff.embed_url)
 
 client.run(os.environ['DISCORD_TOKEN'])
