@@ -29,13 +29,16 @@ async def ettu(ctx):
     await ctx.send(file=discord.File('ettu.gif'))
 
 @client.command()
-async def gif(ctx, *, q):
-    giphykey = os.getenv("GIPHY_KEY")    
-    api_instance = giphy_client.DefaultApi()
-    api_response = api_instance.gifs_search_get(giphykey, q, limit=25, rating='r')
-    list1 = list(api_response.data)
-    giff = random.choice(list1)
+async def gif(ctx, *, q="searchterm"):
+    if q == "searchterm":
+        await ctx.channel.send("Enter a search term noob!")
+    else:
+        giphykey = os.getenv("GIPHY_KEY")    
+        api_instance = giphy_client.DefaultApi()
+        api_response = api_instance.gifs_search_get(giphykey, q, limit=25, rating='r')
+        list1 = list(api_response.data)
+        giff = random.choice(list1)
 
-    await ctx.channel.send(giff.embed_url)
+        await ctx.channel.send(giff.embed_url)
 
 client.run(os.environ['DISCORD_TOKEN'])
