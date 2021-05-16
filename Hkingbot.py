@@ -38,8 +38,4 @@ async def gif(ctx, *, q):
 
     await ctx.channel.send(giff.embed_url)
 
-@client.command()
-async def gif(ctx):
-    await ctx.channel.send("Enter a search term noob!")
-
 client.run(os.environ['DISCORD_TOKEN'])
