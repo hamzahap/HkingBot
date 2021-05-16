@@ -42,6 +42,6 @@ async def gif(ctx, *, q):
     #list1 = list(data)
     #giff = random.choice(list1)
 
-    await ctx.channel.send("http://api.giphy.com/v1/gifs/search?q={query}&api_key={giphykey}&limit=25")
+    await ctx.channel.send(random.choice("http://api.giphy.com/v1/gifs/search?q={query}&api_key={giphykey}&limit=25"))
 
 client.run(os.environ['DISCORD_TOKEN'])
