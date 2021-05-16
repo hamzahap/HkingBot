@@ -30,25 +30,16 @@ async def ettu(ctx):
 
 @client.command()
 async def gif(ctx, *, q):
-    giphykey = os.getenv("GIPHY_KEY")
-    #url = "http://api.giphy.com/v1/gifs/search"
-    query = q
-    #params = urllib.parse.urlencode({
-    #    "q": "noob",
-    #    "api_key": giphykey,
-    #    "limit": "25"
-    #})
-    #with urllib.request.urlopen(url.join(params)) as response:
-    #    data = json.loads(response.read())
-    #list1 = list(data)
-    #giff = random.choice(list1)
-    #url = "http://api.giphy.com/v1/gifs/search?q={query}&api_key={giphykey}&limit=25"
-    
+    giphykey = os.getenv("GIPHY_KEY")    
     api_instance = giphy_client.DefaultApi()
     api_response = api_instance.gifs_search_get(giphykey, q, limit=25, rating='r')
     list1 = list(api_response.data)
     giff = random.choice(list1)
 
     await ctx.channel.send(giff.embed_url)
+
+@client.command()
+async def gif(ctx):
+    await ctx.channel.send("Enter a search term noob!")
 
 client.run(os.environ['DISCORD_TOKEN'])
