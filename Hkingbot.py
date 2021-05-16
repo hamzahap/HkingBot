@@ -13,7 +13,7 @@ VIBIEST_IMAGE = "https://s3.gifyu.com/images/ezgif.com-gif-maker-2664260aedaea96
 client = commands.Bot(command_prefix="!")
 
 @client.command()
-async def vibe(ctx, vibelevel):
+async def vibe(ctx, vibelevel : int = 1):
     if vibelevel == 1:
         await ctx.send(VIBE_IMAGE)
     elif vibelevel == 2:
@@ -34,11 +34,11 @@ async def gif(ctx, *, q):
     giphykey = os.getenv("GIPHY_KEY")
     url = "http://api.giphy.com/v1/gifs/search"
     params = urllib.parse.urlencode({
-    "q": q,
-    "api_key": giphykey,
-    "limit": "25"
+        "q": q,
+        "api_key": giphykey,
+        "limit": "25"
     })
-    with urllib.request.urlopen("".join(url, params)) as response:
+    with urllib.request.urlopen(url.join(params)) as response:
         data = json.loads(response.read())
     list1 = list(data)
     giff = random.choice(list1)
