@@ -35,7 +35,7 @@ async def gif(ctx, *, q):
     url = "http://api.giphy.com/v1/gifs/search"
     query = q
     params = urllib.parse.urlencode({
-        "q": query,
+        "q": "noob",
         "api_key": giphykey,
         "limit": "25"
     })
