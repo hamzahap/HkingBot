@@ -3,8 +3,6 @@ import random
 import giphy_client
 import discord
 from discord.ext import commands
-import urllib
-import json
 
 VIBE_IMAGE = "https://s3.gifyu.com/images/catvibe.gif"
 VIBIER_IMAGE = "https://s3.gifyu.com/images/ezgif.com-gif-maker-174e18faa852a3028.gif"
@@ -32,18 +30,18 @@ async def ettu(ctx):
 @client.command()
 async def gif(ctx, *, q):
     giphykey = os.getenv("GIPHY_KEY")
-    url = "http://api.giphy.com/v1/gifs/search"
+    #url = "http://api.giphy.com/v1/gifs/search"
     query = q
-    params = urllib.parse.urlencode({
-        "q": "noob",
-        "api_key": giphykey,
-        "limit": "25"
-    })
-    with urllib.request.urlopen(url.join(params)) as response:
-        data = json.loads(response.read())
-    list1 = list(data)
-    giff = random.choice(list1)
+    #params = urllib.parse.urlencode({
+    #    "q": "noob",
+    #    "api_key": giphykey,
+    #    "limit": "25"
+    #})
+    #with urllib.request.urlopen(url.join(params)) as response:
+    #    data = json.loads(response.read())
+    #list1 = list(data)
+    #giff = random.choice(list1)
 
-    await ctx.channel.send(giff)
+    await ctx.channel.send("http://api.giphy.com/v1/gifs/search?q={query}&api_key={giphykey}&limit=25")
 
 client.run(os.environ['DISCORD_TOKEN'])
