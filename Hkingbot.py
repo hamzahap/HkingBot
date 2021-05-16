@@ -33,8 +33,9 @@ async def ettu(ctx):
 async def gif(ctx, *, q):
     giphykey = os.getenv("GIPHY_KEY")
     url = "http://api.giphy.com/v1/gifs/search"
+    query = q
     params = urllib.parse.urlencode({
-        "q": q,
+        "q": query,
         "api_key": giphykey,
         "limit": "25"
     })
