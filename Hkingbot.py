@@ -4,6 +4,7 @@ import giphy_client
 import discord
 from discord.ext import commands
 from giphy_client.rest import ApiException
+from google_images_search import GoogleImagesSearch
 
 VIBE_IMAGE = "https://s3.gifyu.com/images/catvibe.gif"
 VIBIER_IMAGE = "https://s3.gifyu.com/images/ezgif.com-gif-maker-174e18faa852a3028.gif"
@@ -40,5 +41,27 @@ async def gif(ctx, *, q="searchterm"):
         giff = random.choice(list1)
 
         await ctx.channel.send(giff.embed_url)
+
+@client.command()
+async def image(ctx, *, q="searchterm"):
+    if q == "searchterm":
+        await ctx.channel.send("Enter a search term noob!")
+    else:
+        gis = GoogleImagesSearch(os.getenv("GOOGLE_KEY"), os.getenv("GOOGLE_CX"))
+        _search_params = {
+            'q': q,
+            'num': 10,
+            'safe': 'high|medium|off',
+            'fileType': 'jpg|gif|png',
+            'imgType': 'clipart|face|lineart|news|photo',
+            'imgSize': 'huge|icon|large|medium|small|xlarge|xxlarge',
+            'imgDominantColor': 'black|blue|brown|gray|green|pink|purple|teal|white|yellow',
+            'rights': 'cc_publicdomain|cc_attribute|cc_sharealike|cc_noncommercial|cc_nonderived'
+        }
+        
+        list2 = list(gis.search(search_params=_search_params))
+        images = random.choice(list2)
+        await ctx.channel.send(images)
+
 
 client.run(os.environ['DISCORD_TOKEN'])
