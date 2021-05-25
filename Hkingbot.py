@@ -9,6 +9,7 @@ from giphy_client.rest import ApiException
 VIBE_IMAGE = "https://s3.gifyu.com/images/catvibe.gif"
 VIBIER_IMAGE = "https://s3.gifyu.com/images/ezgif.com-gif-maker-174e18faa852a3028.gif"
 VIBIEST_IMAGE = "https://s3.gifyu.com/images/ezgif.com-gif-maker-2664260aedaea9638.gif"
+MEGA = https://docs.google.com/uc?export=open&id=1HmUJixzfULAS4yuGPbJLaDim6g9XEx8H
 
 client = commands.Bot(command_prefix="!")
 
@@ -44,7 +45,7 @@ async def gif(ctx, *, q="searchterm"):
 
 @client.command()
 async def megakek(ctx):
-    await ctx.channel.send(file=discord.File('megakek.mp3'))
+    await ctx.channel.send(file=discord.File(MEGA))
 
 #@client.command()
 #async def image(ctx, *, q="searchterm"):
