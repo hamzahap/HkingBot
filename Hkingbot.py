@@ -42,6 +42,10 @@ async def gif(ctx, *, q="searchterm"):
 
         await ctx.channel.send(giff.embed_url)
 
+@client.command()
+async def megakek(ctx):
+    await ctx.channel.send("megakek.mp3")
+
 #@client.command()
 #async def image(ctx, *, q="searchterm"):
 #    if q == "searchterm":
