@@ -13,7 +13,7 @@ VIBIEST_IMAGE = "https://s3.gifyu.com/images/ezgif.com-gif-maker-2664260aedaea96
 client = commands.Bot(command_prefix="!")
 
 @client.event
-async def on_reaction_add(self, reaction):
+async def on_reaction_add(reaction):
     a = reaction.message
     await reaction.message.channel.send(a)
     #if 'star' in message.reactions:
