@@ -11,6 +11,12 @@ VIBIER_IMAGE = "https://s3.gifyu.com/images/ezgif.com-gif-maker-174e18faa852a302
 VIBIEST_IMAGE = "https://s3.gifyu.com/images/ezgif.com-gif-maker-2664260aedaea9638.gif"
 
 client = commands.Bot(command_prefix="!")
+@client.event()
+async def on_reaction_add(ctx, reaction):
+    if reaction.emoji == 'star' and reaction.count>=1:
+        await ctx.send(reaction.message)
+
+
 
 @client.command()
 async def vibe(ctx, vibelevel : int = 1):
