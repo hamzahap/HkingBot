@@ -14,9 +14,8 @@ client = commands.Bot(command_prefix="!")
 
 @client.event
 async def on_reaction_add(self, reaction):
-    a = reaction.message.reactions
-    for x in range(len(a)):
-        await reaction.message.channel.send(a(x))
+    a = reaction.message
+    await reaction.message.channel.send(a)
     #if 'star' in message.reactions:
         
     #    await message.channel.send('message')
