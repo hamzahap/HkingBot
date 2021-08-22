@@ -26,7 +26,7 @@ async def on_reaction_add(reaction, user):
         if reaction.count==1:        
             channel1 = discord.utils.get(client.get_all_channels(), name='bookmark')
         #channel = client.get_channel(878984320130355220)
-            embedVar = discord.Embed(title="Original Message",url = reaction.messsage.jump_url, description = reaction.message.content, color = 0xFFFF00)
+            embedVar = discord.Embed(title="Original Message",url = reaction.message.jump_url, description = reaction.message.content, color = 0xFFFF00)
             embedVar.set_author(name=user.display_name,icon_url=user.avatar_url)
             #await channel1.send(reaction.message.content)
             await channel1.send(embed=embedVar)
