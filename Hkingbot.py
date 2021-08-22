@@ -19,7 +19,7 @@ client = commands.Bot(command_prefix="!")
 
 
 
-@client.cogs.listener()
+@client.event()
 async def on_reaction_add(reaction, user):
     #await reaction.message.channel.send(reaction.emoji.id)
     if reaction.emoji == '⭐':
