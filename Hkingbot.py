@@ -1,16 +1,23 @@
 import os
 import random
+from discord import message
 import giphy_client
 import discord
 from discord.ext import commands
 from giphy_client.rest import ApiException
+
 #from google_images_search import GoogleImagesSearch
 
 VIBE_IMAGE = "https://s3.gifyu.com/images/catvibe.gif"
 VIBIER_IMAGE = "https://s3.gifyu.com/images/ezgif.com-gif-maker-174e18faa852a3028.gif"
 VIBIEST_IMAGE = "https://s3.gifyu.com/images/ezgif.com-gif-maker-2664260aedaea9638.gif"
 
+
+
 client = commands.Bot(command_prefix="!")
+
+
+
 
 @client.event
 async def on_reaction_add(reaction, user):
@@ -19,7 +26,11 @@ async def on_reaction_add(reaction, user):
         if reaction.count==1:        
             channel1 = discord.utils.get(client.get_all_channels(), name='bookmark')
         #channel = client.get_channel(878984320130355220)
-            await channel1.send(reaction.message.content)
+            embedVar = discord.Embed(color = 0xFFFF00)
+            embedVar.set_author(name=user.display_name,icon_url=user.avatar_url)
+            #await channel1.send(reaction.message.content)
+            await channel1.send(embed=embedVar)
+    
         #await reaction.message.channel.send(reaction.message.content)
     #if 'star' in message.reactions:
         
