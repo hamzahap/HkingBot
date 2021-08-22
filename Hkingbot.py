@@ -16,10 +16,10 @@ client = commands.Bot(command_prefix="!")
 async def on_reaction_add(reaction, user):
     #await reaction.message.channel.send(reaction.emoji.id)
     if reaction.emoji == '⭐':
-        if reaction.count==2:        
+        if reaction.count==1:        
             channel1 = discord.utils.get(client.get_all_channels(), name='bookmark')
         #channel = client.get_channel(878984320130355220)
-            if reaction.message.content != channel1.last_message_id.content:
+            if reaction.message.content != channel1.lastMessage.content:
                 await channel1.send(reaction.message.content)
         #await reaction.message.channel.send(reaction.message.content)
     #if 'star' in message.reactions:
