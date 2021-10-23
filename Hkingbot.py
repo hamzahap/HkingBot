@@ -8,9 +8,9 @@ from giphy_client.rest import ApiException
 
 #from google_images_search import GoogleImagesSearch
 
-VIBE_IMAGE = "https://s3.gifyu.com/images/catvibe.gif"
-VIBIER_IMAGE = "https://s3.gifyu.com/images/ezgif.com-gif-maker-174e18faa852a3028.gif"
-VIBIEST_IMAGE = "https://s3.gifyu.com/images/ezgif.com-gif-maker-2664260aedaea9638.gif"
+VIBE_IMAGE = "https://hamzahap.github.io/VibeGIFS/Vibe.gif"
+VIBIER_IMAGE = "https://hamzahap.github.io/VibeGIFS/Vibey.gif"
+VIBIEST_IMAGE = "https://hamzahap.github.io/VibeGIFS/Vibey.gif"
 
 
 
@@ -28,6 +28,7 @@ async def on_reaction_add(reaction, user):
         #channel = client.get_channel(878984320130355220)
             embedVar = discord.Embed(title="Original Message",url = reaction.message.jump_url, description = reaction.message.content, color = 0xFFFF00)
             embedVar.set_author(name=reaction.message.author.display_name,icon_url=reaction.message.author.avatar_url)
+            embedVar.set_image(reaction.message)
             #await channel1.send(reaction.message.content)
             await channel1.send(embed=embedVar)
     
