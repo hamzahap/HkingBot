@@ -28,7 +28,7 @@ async def on_reaction_add(reaction, user):
             channel = client.get_channel(878984320130355220)
             embedVar = discord.Embed(title="Original Message",url = reaction.message.jump_url, description = reaction.message.content, color = 0xFFFF00)
             embedVar.set_author(name=reaction.message.author.display_name,icon_url=reaction.message.author.avatar_url)
-            #embedVar.set_image(reaction.message)
+            embedVar.set_image(reaction.message.content)
             #await channel1.send(reaction.message.content)
             await channel.send(embed=embedVar)
     
